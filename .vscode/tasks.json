@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build testFTEST",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/testFTEST/testFTEST.fsproj"
+      ],
+      "problemMatcher": "$msCompile"
+    }
+  ]
+}

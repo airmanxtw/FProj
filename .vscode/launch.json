@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "coreclr",
+      "request": "launch",
+      "name": "Debug testFTEST (net9.0)",
+      "program": "${workspaceFolder}/testFTEST/bin/Debug/net9.0/${input:testAssembly}",
+      "args": [],
+      "cwd": "${workspaceFolder}/testFTEST",
+      "stopAtEntry": false,
+      "preLaunchTask": "build testFTEST"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "testAssembly",
+      "type": "pickString",
+      "description": "Select the test assembly to debug",
+      "options": [
+        "testFTEST.dll"
+      ]
+    }
+  ]
+}
