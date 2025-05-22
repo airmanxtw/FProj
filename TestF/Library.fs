@@ -12,17 +12,23 @@ module Say =
 
     let dataListSum = seq { for i in 1..10 -> i } |> Seq.sum
 
-    
 
-    let GetName  s = s.StudName
+
+    let GetName s = s.StudName
 
     let Ex1 name = sprintf "hello, %s" name
 
     let Ex2 x y = x + y
-       
+
     let Ex3 x y =
-        match (x*2+y) % 3 with
+        match (x * 2 + y) % 3 with
         | 0 -> "大吉"
         | 1 -> "吉"
         | 2 -> "普通"
         | _ -> "未知"
+
+    let Ex4 year =
+        if year % 4 = 0 && year % 100 <> 0 || year % 400 = 0 then
+            "閏年"
+        else
+            "平年"

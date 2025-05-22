@@ -35,9 +35,14 @@ type Test1() =
 
     [<TestMethod>]
     member this.TextEx3() = 
-        Assert.AreEqual<string>("大吉",Say.Ex3 8 16)
+        Assert.AreEqual<string>("普通",Say.Ex3 8 16)
         Assert.AreEqual<string>("吉",Say.Ex3 8 15)
-        Assert.AreEqual<string>("普通",Say.Ex3 8 14)
+        Assert.AreEqual<string>("大吉",Say.Ex3 8 14)
+
+    [<TestMethod>]
+    member this.TextEx4() =
+        Assert.AreEqual<string>("平年",Say.Ex4 1977)
+        Assert.AreEqual<string>("閏年",Say.Ex4 1980)
 
     
 
