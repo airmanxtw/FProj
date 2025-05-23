@@ -44,7 +44,11 @@ type Test1() =
         Assert.AreEqual<string>("平年",Say.Ex4 1977)
         Assert.AreEqual<string>("閏年",Say.Ex4 1980)
 
-    
+    [<TestMethod>]
+    member this.TextEx5()=
+        Assert.AreEqual<List<int>>([1;2;3;4;5],Say.Ex5 [1;2;3;4])
+        Assert.AreEqual<List<int>>([1;3;5;7;9],Say.Ex5 [1;3;5;7])
+      
 
 
    

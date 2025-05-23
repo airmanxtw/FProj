@@ -32,3 +32,15 @@ module Say =
             "閏年"
         else
             "平年"
+
+    let Ex5 (nums: List<int>) = 
+        let d = nums.Item(1) - nums.Item(0)
+        let b = 
+            nums
+            |> List.pairwise
+            |> List.forall (fun (x, y) -> y - x = d)
+        if b then
+            [for i in 0..nums.Length -> if i=0 then nums.Item(i) else nums.Item(i-1) + d]
+        else
+            [for i in 0..nums.Length-1 -> nums.Item(i) - d]
+        
