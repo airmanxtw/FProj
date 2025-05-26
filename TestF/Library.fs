@@ -3,6 +3,7 @@
 
 
 module Say =
+    open System
     let hello name = printfn "Hello %s" name
 
     let add x y = x + y
@@ -34,13 +35,44 @@ module Say =
             "平年"
 
     let Ex5 (nums: List<int>) = 
-        let d = nums.Item(1) - nums.Item(0)
-        let b = 
+        if nums.Length < 2 then
+            failwith "List must contain at least two elements."        
+        let d = nums.Item(1) - nums.Item(0)        
+        let isd = 
             nums
             |> List.pairwise
             |> List.forall (fun (x, y) -> y - x = d)
-        if b then
+        let b : int = nums.Item(1)/ nums.Item(0)
+        let isb = 
+            nums
+            |> List.pairwise
+            |> List.forall (fun (x, y) -> y / x = b)
+        if isd then
             [for i in 0..nums.Length -> if i=0 then nums.Item(i) else nums.Item(i-1) + d]
-        else
-            [for i in 0..nums.Length-1 -> nums.Item(i) - d]
-        
+        elif isb then
+            [for i in 0..nums.Length -> if i=0 then nums.Item(i) else nums.Item(i-1) * b]
+        else []
+
+    // 求二元一次方程式的解    
+    let Ex6 a b c =
+        let delta = b * b - 4.0 * a * c
+        match delta with
+        | d when d > 0.0 ->
+            let sqrtD = sqrt d
+            [(-b + sqrtD) / (2.0 * a); (-b - sqrtD) / (2.0 * a)]
+        | d when d = 0.0 ->
+            [ -b / (2.0 * a) ]
+        | _ -> []
+
+    // 將字串轉為ascii碼
+    let Ex7 str :string = String.map (fun c -> char (int c - 14)) str
+
+    let Ex8 (x:int) = 
+        let rec factors n i acc =
+            if i * i > n then
+                if n > 1 then n :: acc else acc
+            elif n % i = 0 then
+                factors (n / i) i (i :: acc)
+            else
+                factors n (i + 1) acc
+        factors x 2 [] |> List.rev

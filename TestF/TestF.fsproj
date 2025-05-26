@@ -9,7 +9,8 @@
     <Compile Include="Model/Stud.fs" />
     <Compile Include="Mymath2.fs" />
     <Compile Include="Library.fs" />
-    <Compile Include="Mymath.fs" />        
+    <Compile Include="Mymath.fs" /> 
+    <Compile Include="Think.fs" />               
   </ItemGroup>
 
 </Project>
