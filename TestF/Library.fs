@@ -4,6 +4,8 @@
 
 module Say =
     open System
+    open FSharpx
+    open FSharpx.Result
     let hello name = printfn "Hello %s" name
 
     let add x y = x + y
@@ -76,3 +78,12 @@ module Say =
             else
                 factors n (i + 1) acc
         factors x 2 [] |> List.rev
+
+    let Ex9 n = Ok(n+1)
+
+    let ex9Result : Result<int, string> =
+        result {
+            let! x = Ex9 10
+            let! y = Ex9 20
+            return x + y
+        }

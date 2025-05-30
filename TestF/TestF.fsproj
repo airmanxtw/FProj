@@ -13,4 +13,8 @@
     <Compile Include="Think.fs" />               
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="FSharpx.Extras" Version="3.3.0" />
+  </ItemGroup>
+
 </Project>
