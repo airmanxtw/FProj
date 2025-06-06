@@ -81,6 +81,9 @@ module Say =
 
     let Ex9 n = Ok(n+1)
 
+    let ex9_2Result: Result<int, string> = Ex9 10 |> Result.bind (fun x ->
+        Ex9 20 |> Result.map (fun y -> x + y))
+
     let ex9Result : Result<int, string> =
         result {
             let! x = Ex9 10
