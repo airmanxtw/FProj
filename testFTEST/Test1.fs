@@ -65,6 +65,9 @@ type Test1() =
         Assert.AreEqual<List<int>>([2;2;5],Say.Ex8 20)
         Assert.AreEqual<List<int>>([17],Say.Ex8 17)
         Assert.AreEqual<List<int>>([757 ;1321],Say.Ex8 999997)
+
+    member this.TestReult()=
+        Assert.AreEqual<int>(15,Say.funResult1 1 2)
       
 
 

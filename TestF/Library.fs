@@ -90,3 +90,14 @@ module Say =
             let! y = Ex9 20
             return x + y
         }
+    
+    let fun1 x = x*3;
+    let fun2 y = y+10;
+
+    let funResult1 x y = 
+        fun1 x |> fun z -> fun2 y |> fun w -> z +  w;
+
+    let funReulst2 x y =
+        let z = fun1 x
+        let w = fun2 y
+        z +  w
