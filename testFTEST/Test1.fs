@@ -3,6 +3,9 @@
 open System
 open Microsoft.VisualStudio.TestTools.UnitTesting
 open TestF
+open Mymath2
+
+
 
 
 [<TestClass>]
@@ -68,6 +71,16 @@ type Test1() =
 
     member this.TestReult()=
         Assert.AreEqual<int>(15,Say.funResult1 1 2)
+
+    [<TestMethod>]
+    member this.TestStateResult() = 
+        let result = stateResult1
+        Assert.AreEqual<int>(21,result)
+
+    [<TestMethod>]
+    member this.TestStateResult2() = 
+        let result = stateResult2
+        Assert.AreEqual<int>(21,result)
       
 
 
